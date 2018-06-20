@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+}
+
+section.jogo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: ;
+}
+
+section > div{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div.carta{
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+}
+
+div.carta:hover{
+    background-color: blue;
+}
