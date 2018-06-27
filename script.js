@@ -58,11 +58,11 @@ function virarCarta (){
 }
 
 // Verificar se as cartas possuem imagens iguais
-function verificarPar(cartas){
-    if (cartas[0].style.backgroundImage == cartas[1].style.backgroundImage){
+function verificarPar(cartasSelecionadas){
+    if (cartasSelecionadas[0].style.backgroundImage == cartasSelecionadas[1].style.backgroundImage){
         console.log("Cartas iguais!");
 
-        for (let carta of cartas){
+        for (let carta of cartasSelecionadas){
             carta.estaPareada = true; 
         }
 
@@ -72,11 +72,16 @@ function verificarPar(cartas){
         console.log("Cartas diferentes!");
 
         // (Des)vira a carta
-        for (let carta of cartas){
-            carta.style.backgroundImage = "url(img/reverse_clear.png)";
-            carta.estaVirada = false;
-        }
+        setTimeout(desvirarCarta, 300, cartasSelecionadas);
 
+    }
+}
+
+// Esconde a imagem da carta
+function desvirarCarta (cartasSelecionadas){
+    for (let carta of cartasSelecionadas){
+        carta.style.backgroundImage = "url(img/reverse_clear.png)";
+        carta.estaVirada = false;
     }
 }
 
