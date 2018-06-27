@@ -1,27 +1,32 @@
 const cartas = document.querySelectorAll(".carta");
-const imagens = ["img/action.png", "img/gale.png", "img/gale.png", "img/action.png"];
-const distribuicaoImagens = [];
-let cartasEmbaralhadas = [];
+const imagens = ["img/action.png", "img/aqua.png", "img/gale.png", "img/reflect.png", "img/siege.png"];
+
+let ordemCartasEmbaralhadas = [];
 
 function sortearNumero(min, max){
     return Math.floor(Math.random()*(max - min + 1)) + min;
 }
 
 function embaralharCartas(){
+    let distribuicaoImagens = [];
+    let numeroDePares = cartas.length/2;
 
-    for (let carta in cartas){
-        distribuicaoImagens[carta] = 0;
+    for (let i = 0; i < numeroDePares; i++){
+        distribuicaoImagens[i] = 0;
     }
 
-    for (let carta in cartas){
-        while (cartasEmbaralhadas[carta] == undefined){
-            let num = sortearNumero(0, cartas.length);
-        
+    for (let i = 0; i < cartas.length; i++){
+
+        // Enquanto uma imagem não for sorteada...
+        while (ordemCartasEmbaralhadas[i] === undefined){
+            let num = sortearNumero(0, numeroDePares);
+    
             if (distribuicaoImagens[num] < 2){
-                cartasEmbaralhadas[carta] = imagens[num];
+                ordemCartasEmbaralhadas[i] = imagens[num];
                 distribuicaoImagens[num]++;
             }
         }
+        
     }
 
 }
@@ -31,7 +36,7 @@ function virarCarta (){
     if (!this.estaPareada){
 
         // Mostra a imagem da carta
-        this.style.backgroundImage = `url(${imagens[this.indice]})`;
+        this.style.backgroundImage = `url(${ordemCartasEmbaralhadas[this.indice]})`;
         this.estaVirada = true;
         
         let cartasViradas = [];
@@ -86,7 +91,7 @@ function verificarFimDeJogo(){
     }
 }
 
-//embaralharCartas();
+embaralharCartas();
 
 // Atribuições
 for (let carta in cartas){
