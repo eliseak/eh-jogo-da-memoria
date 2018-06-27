@@ -1,3 +1,4 @@
+const fim = document.querySelector(".fimDeJogo");
 const cartas = document.querySelectorAll(".carta");
 const imagens = ["img/action.png", "img/aqua.png", "img/gale.png", "img/reflect.png", "img/siege.png"];
 
@@ -94,6 +95,7 @@ function verificarFimDeJogo(){
     }
 
     if (todasPareadas){
+        fim.classList.add("aparecer");
         console.log("Fim do jogo!");
     }
 }

@@ -23,3 +23,24 @@ div.carta{
 div.carta:hover{
     background-color: rgba(255, 255, 255, 0.75);
 }
+
+.fimDeJogo{
+    display: none;
+    position: absolute;
+    top: 200px;
+    border: #D6676E 5px dotted;
+    border-radius: 70px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+h1{
+    margin: 0;
+    color: #D6676E;
+    font-family: 'Courgette', cursive;
+    font-size: 80px;
+}
+
+.aparecer{
+    display: block;
+}
