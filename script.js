@@ -3,10 +3,12 @@ const imagens = ["img/action.png", "img/aqua.png", "img/gale.png", "img/reflect.
 
 let ordemCartasEmbaralhadas = [];
 
+// Sorteia um numero
 function sortearNumero(min, max){
     return Math.floor(Math.random()*(max - min + 1)) + min;
 }
 
+// Embaralha as cartas no início do jogo
 function embaralharCartas(){
     let distribuicaoImagens = [];
     let numeroDePares = cartas.length/2;
@@ -26,7 +28,7 @@ function embaralharCartas(){
                 distribuicaoImagens[num]++;
             }
         }
-        
+
     }
 
 }
@@ -47,8 +49,8 @@ function virarCarta (){
         }
 
         if (cartasViradas.length === 2){
-            // Verificar par
-            console.log("Verificar par!")
+    
+            // Verificar se o par de cartas viradas são iguais
             verificarPar(cartasViradas);
         }
 
