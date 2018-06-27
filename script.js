@@ -86,7 +86,7 @@ function verificarFimDeJogo(){
     }
 }
 
-embaralharCartas();
+//embaralharCartas();
 
 // Atribuições
 for (let carta in cartas){
