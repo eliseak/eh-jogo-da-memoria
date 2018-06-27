@@ -1,5 +1,5 @@
 const cartas = document.querySelectorAll(".carta");
-const imagens = ["img/action.jpg", "img/gale.jpg", "img/gale.jpg", "img/action.jpg"];
+const imagens = ["img/action.png", "img/gale.png", "img/gale.png", "img/action.png"];
 const distribuicaoImagens = [];
 let cartasEmbaralhadas = [];
 
